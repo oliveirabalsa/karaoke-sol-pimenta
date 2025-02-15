@@ -1,6 +1,7 @@
 import type { MetaFunction } from "@remix-run/node";
 import logo from "../images/logo.png";
 import { useLoaderData } from "@remix-run/react";
+import { Song } from "../models/Song";
 
 export const meta: MetaFunction = () => {
   return [
@@ -9,17 +10,7 @@ export const meta: MetaFunction = () => {
   ];
 };
 
-type Song = {
-  code: string;
-  title: string;
-  artist: string;
-  genre: string;
-  lyrics: string;
-};
-
 export const loader = async () => {
-  // const response = await fetch("http://localhost:3000/api/songs");
-  // const songs: Song[] = await response.json();
   const songs: Song[] = [
     {
       code: "1",
